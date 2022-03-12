@@ -51,7 +51,7 @@ class CompanyController extends Controller
         // dd($req->all());
         $logo = request('logo')->store('uploads', 'public');
         $req->validate(['name' => 'required', 'email' => '
-        email', 'logo' => 'required|image|dimensions:width=178,height=100']);
+        email', 'logo' => 'required|image|dimensions:width=100,height=100']);
         $company = new Comapany();
         $company->name = $req->name;
         $company->email = $req->email;
@@ -102,7 +102,7 @@ class CompanyController extends Controller
         // dd($request->all());
         $logo = request('logo')->store('uploads', 'public');
         $req->validate(['name' => 'required', 'email' => 'required|
-        email', 'logo' => 'required|image|dimensions:width=178,height=100', 'website' => 'required']);
+        email', 'logo' => 'required|image|dimensions:width=100,height=100', 'website' => 'required']);
         $company =  Comapany::find($id);
         $company->name = $req->name;
         $company->email = $req->email;
